@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float jumpForce;
     private float moveInput;
-
+    public GameObject firepoint;
     private bool facingLeft = true;
 
     private bool isGrounded;
@@ -66,9 +66,14 @@ public class PlayerController : MonoBehaviour
 
     void Flip()
     {
+
+      
         facingLeft = !facingLeft;
         Vector3 scaler = transform.localScale;
         scaler.x *= -1;
         transform.localScale = scaler;
+
+        firepoint.transform.Rotate(0, -180, 0);
+
     }
 }

@@ -15,5 +15,14 @@ public class Bullet : MonoBehaviour
 
     }
 
+    void Update()
+    {
+    }
+
+    void OnTriggerEnter2D (Collider2D hitInfo)
+    {
+        Debug.Log(hitInfo.name);
+        Destroy(gameObject);
+    }
    
 }
