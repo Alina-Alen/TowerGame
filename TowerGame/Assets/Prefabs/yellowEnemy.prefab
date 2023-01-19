@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 194213314895613385}
   - component: {fileID: 194213314895613384}
   - component: {fileID: 194213314895613383}
+  - component: {fileID: -7114366353951419656}
   m_Layer: 7
   m_Name: yellowEnemy
   m_TagString: Untagged
@@ -164,3 +165,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
+--- !u!114 &-7114366353951419656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194213314895613382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff36ded8321d56443ae49df82274dde3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  color: yellow
+  particles: {fileID: 7937338753336838912, guid: aa7792f563d44cf42acb4cecb913394a, type: 3}

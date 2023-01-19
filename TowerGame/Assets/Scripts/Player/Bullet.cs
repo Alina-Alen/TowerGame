@@ -7,6 +7,9 @@ public class Bullet : MonoBehaviour
 
     public float speed = -20f;
     public Rigidbody2D rb;
+    private EnemyHealth enemy;
+
+    public string bulletType = "pink";
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +22,25 @@ public class Bullet : MonoBehaviour
     {
     }
 
-    void OnTriggerEnter2D (Collider2D hitInfo)
+    void OnTriggerEnter2D (Collider2D collision)
     {
-        Debug.Log(hitInfo.name);
+
+        
+        enemy = collision.GetComponent<EnemyHealth>();
+
+
+        if(enemy != null)
+        {
+            //pink beats yellow
+            //yellow beats green
+            //green beats pink
+            if ((enemy.getColor() == "yellow" && bulletType == "pink") || (enemy.getColor() == "green" && bulletType == "yellow") 
+                || enemy.getColor() == "pink" && bulletType == "green")
+            {
+                enemy.TakeDamage();
+            } 
+            
+        }
         Destroy(gameObject);
     }
    
