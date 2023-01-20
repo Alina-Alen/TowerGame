@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1391929982626825547}
   - component: {fileID: 2326634714279089503}
   - component: {fileID: -7779577205615932266}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: PinkFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,3 +138,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: -20
   rb: {fileID: 1391929982626825547}
+  bulletType: pink
