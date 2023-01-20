@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     public Image[] hearts;
     public Sprite heart;
     public int Respawn;
+    private float restartTime=1;
+    public GameObject particles;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,20 @@ public class PlayerHealth : MonoBehaviour
                 hearts[i].enabled = false; 
             }
         }
+        if (currentHealth == 0)
+        {
+            if (restartTime > 0)
+            {
+                restartTime -= Time.deltaTime;
+            }
+            else
+            {
+                Instantiate(particles, transform.position, transform.rotation);
+                
+                SceneManager.LoadScene(Respawn);
+            }
+
+        }
     }
 
     void loseHealth()
@@ -40,12 +56,21 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+       
         if (other.gameObject.tag == "Enemy"){
             loseHealth();
-            if (currentHealth == 0)
+            /*if (currentHealth == 0)
             {
-                SceneManager.LoadScene(Respawn);
-            }
+                if (restartTime > 0)
+                {
+                    restartTime -= Time.deltaTime;
+                }
+                else {
+                    Instantiate(particles, transform.position, transform.rotation);
+                    SceneManager.LoadScene(Respawn);
+                }
+              
+            }*/
         }
         
     }
